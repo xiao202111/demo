@@ -1,0 +1,66 @@
+BeautifulSoup()返回的对象是一个BeautifulSoup类型的实例，它有以下几个常用的方法和属性：
+
+1. find(name, attrs, recursive, string, **kwargs)：在文档中查找第一个匹配的标签，并返回该标签的BeautifulSoup类型的实例。
+   - name：指定标签的名称，可以是一个字符串，也可以是一个列表。
+   - attrs：指定标签的属性，以字典的形式传递，例如{'class': 'content'}。
+   - recursive：指定查找的深度，默认为True，表示查找所有子孙节点，如果设置为False，则只查找直接子节点。
+   - string：指定标签的文本内容。
+   - **kwargs：其他的属性参数。
+
+2. find_all(name, attrs, recursive, string, limit, **kwargs)：在文档中查找所有匹配的标签，并返回一个包含这些标签的列表。
+   - name、attrs、recursive、string和**kwargs的含义与find()相同。
+   - limit：指定返回的最大数量，默认为None，表示返回所有匹配的标签。
+
+3. select(css_selector)：使用CSS选择器在文档中查找匹配的标签，并返回一个包含这些标签的列表。
+
+4. prettify()：将文档格式化输出，便于阅读和调试。
+
+5. string：获取标签内的文本内容。
+
+6. attrs：获取标签的属性，以字典的形式返回。
+
+7. parent：获取标签的父亲节点，返回一个BeautifulSoup类型的实例。
+
+8. contents：获取标签的所有子节点，返回一个包含这些子节点的列表。
+
+9. text：获取标签的所有文本内容，包括子节点的文本内容。
+除了上述常用的方法和属性外，BeautifulSoup对象还有以下一些方法和属性：
+
+1. new_tag(name, attrs=None, **kwargs)：创建一个新的标签，返回一个Tag类型的实例。
+   - name：新标签的名称。
+   - attrs：新标签的属性，以字典的形式传递。
+   - **kwargs：其他的属性参数。
+
+2. new_string(s, parent=None)：创建一个新的字符串，返回一个NavigableString类型的实例。
+   - s：新字符串的内容。
+   - parent：可选参数，指定新字符串所属的父节点，如果不指定，则默认为None。
+
+3. insert_before(new_tag)：在当前标签的前面插入一个新的标签。
+
+4. insert_after(new_tag)：在当前标签的后面插入一个新的标签。
+
+5. replace_with(new_tag)：用新的标签替换当前标签。
+
+6. decompose()：将当前标签从文档中移除，同时删除其所有的子孙节点。
+
+7. name：获取标签的名称。
+
+8. text：获取标签的文本内容，不包括其子节点的文本内容。
+
+9. get_text(separator='', strip=False)：获取标签及其子节点的所有文本内容，可以指定分隔符和是否去除前后空格。
+
+10. has_attr(name)：判断标签是否具有指定的属性。
+
+11. has_class(name)：判断标签是否具有指定的class属性。
+
+12. find_parents(name=None, attrs={}, recursive=True, limit=None)：查找当前标签的所有祖先节点，返回一个包含这些节点的列表。
+
+13. find_next_sibling(name=None, attrs={}, string=None, **kwargs)：查找当前标签的下一个兄弟节点，返回一个BeautifulSoup类型的实例。
+
+14. find_previous_sibling(name=None, attrs={}, string=None, **kwargs)：查找当前标签的上一个兄弟节点，返回一个BeautifulSoup类型的实例。
+
+15. find_next(name=None, attrs={}, string=None, **kwargs)：查找当前标签之后的所有匹配的标签，返回一个包含这些标签的列表。
+
+16. find_previous(name=None, attrs={}, string=None, **kwargs)：查找当前标签之前的所有匹配的标签，返回一个包含这些标签的列表。
+
+这些方法和属性能够满足大多数HTML和XML文档的解析需求，如果需要更高级的操作，可以参考BeautifulSoup官方文档或者使用其他相关的Python库。
